@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Animatie</title>
+    <style>
+        body {
+            background-color: black;
+            width: 400 px;
+            height: 800px;
+            margin: auto;
+        }
+
+        #circle {
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            left: 38%;
+            margin-top: 50%;
+            box-shadow: 30px 0px 60px 1px #55fba050,
+                -30px 0px 60px 1px#55fba050,
+                0px 30px 60px 1px #b87aff70,
+                0px -30px 60px 1px #fb5dac70;
+            animation-name: rotating-animation;
+            animation-duration: 1.2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform: translate(580px, 250px);
+        }
+
+        @keyframes rotating-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        #smallcircle {
+            background-color: black;
+            border-radius: 50%;
+            width: 260px;
+            height: 260px;
+            border-color: rgb(68, 67, 67);
+            border-style: solid;
+            border-width: 1px;
+            position: relative;
+            transform: translate(582px, -282px);
+        }
+
+        #interiorcircle {
+            background-color: black;
+            border-radius: 50%;
+            width: 1px;
+            height: 1px;
+            border-color: rgb(68, 67, 67);
+            opacity: 20%;
+            border-style: solid;
+            border-width: 120px;
+            position: relative;
+            transform: translate(8px, 8px);
+            animation: 1.2s circle reverse;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            transition-timing-function: ease-out;
+        }
+
+        @keyframes circle {
+            0% {
+                clip-path: circle(85%);
+            }
+
+            100% {
+                clip-path: circle(0%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rectangle">
+        <div id="circle" class="rotating">
+        </div>
+        <div id="smallcircle">
+            <div id="interiorcircle">
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
